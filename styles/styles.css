@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --Light-Cyan: hsl(193, 38%, 86%);
+--Neon-Green: hsl(150, 100%, 66%);
+--Grayish-Blue: hsl(217, 19%, 38%);
+--Dark-Grayish-Blue: hsl(217, 19%, 24%);
+--Dark-Blue: hsl(218, 23%, 16%);
+}
+body {
+ font-family: "Manrope", sans-serif;
+}
+.container{
+   background-color: var(--Dark-Blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.content {
+  width: 500px;
+  max-width: 90%;
+  background-color: var(--Dark-Grayish-Blue);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+.advice-title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  color: var(--Neon-Green);
+}
+.advice-text {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--Light-Cyan);
+}
+.icon {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: var(--Neon-Green);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+}
+.icon:hover {
+  box-shadow: 0 0 30px var(--Neon-Green);
+}
+.content>img{
+  max-width: 100%;
+  margin: 20px 0 25px 0;
+}
+.mobile{
+  display: none;
+}
+.desktop{
+  display: block;
+}
+@media screen and (max-width:768px) {
+  .desktop{
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+}

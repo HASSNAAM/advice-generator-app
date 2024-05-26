@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Advices</title>
-</head>
-<body>
-  <div class="container">
-    <h1 class="advice-title">ADVICE # 20</h1>
-    <p class="advice-text">"Don't put off breaking up with someone when you know you want to. Prolonging the situation only makes it worse."</p>
-<img src="https://neenreva.github.io/advice-generator-app-main/images/pattern-divider-desktop.svg" alt="line">
-    <div class="icon">
-    <i class="fa-solid fa-qrcode"></i>
-</div>
-</div>
-<p class="credit">Challenge by <a href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Hassnaa Mahmoud</a>.</p>
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const adviceTitle = document.querySelector('.advice-title');
-        const adviceText = document.querySelector('.advice-text');
-        const icon = document.querySelector('.icon');
 
-        icon.addEventListener('click', function () {
-            fetch('https://api.adviceslip.com/advice')
-                .then(response => response.json())
-                .then(data => {
-                    const adviceNumber = data.slip.id;
-                    const advice = data.slip.advice;
-                    adviceTitle.textContent = `ADVICE # ${adviceNumber}`;
-                    adviceText.textContent = `"${advice}"`;
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-        });
-    });
-</script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+        <link rel="stylesheet" href="./styles/styles.css">
+        <style>
+            footer {
+                position: absolute;
+                bottom: 1.5%;
+                width: 100%;
+                z-index: 100;
+            }
+
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+                color: var(--Light-Cyan);
+            }
+
+            .attribution a {
+                color: var(--Neon-Green);
+                text-decoration: none;
+            }
+        </style>
+        <title>Frontend Mentor | Advice generator app</title>
+    </head>
+
+    <body>
+        <main class="container">
+          <div class="content">
+            <h1 class="advice-title">ADVICE # 20</h1>
+            <p class="advice-text">"Don't put off breaking up with someone when you know you want to. Prolonging the
+                situation only makes it worse."</p>
+            <img src="./images/pattern-divider-desktop.svg" alt="line" class="desktop">
+            <img src="./images/pattern-divider-mobile.svg" alt="line" class="mobile">
+            <div class="icon">
+                <img src="images/icon-dice.svg" alt="Dice Icon">
+            </div>
+          </div>
+        </main>
+        <footer>
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Coded by <a href="#">Hassnaa Mahmoud</a>.
+            </div>
+        </footer>
+        <script src="logic/main.js"></script>
+    </body>
+
 </html>
